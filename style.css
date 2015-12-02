@@ -1,0 +1,777 @@
+/*---------------------------------------------------------------------------------
+
+	Theme Name: ONA Ethics
+	Version: 0.1
+	Description: A custom theme built for the ONA Ethics Code customizer
+	Author: Adam Nekola
+	
+----------------------------------------------------------------------------------- */
+
+body {
+	margin:0;
+	padding:0;
+}
+html {
+	background: #F7F4F1;
+	font-family: 'Khula', sans-serif;
+	font-weight: 300;
+	letter-spacing: -0.01em;
+}
+
+/* Layout */
+
+.container {
+	max-width: 900px;
+	margin: 0 auto 40px;
+	padding: 0 20px;
+	overflow: auto;
+}
+
+.sidebar {
+    max-width: 630px;
+	margin: 0 auto;
+}
+.main-column {
+	margin: 0 auto;
+	max-width: 630px;
+}
+.main-column.float {
+	background: white;
+	box-sizing: border-box;
+	padding: 20px;
+}
+@media (min-width: 800px){
+	.main-column.float {
+		float: right;
+		padding: 0 2.5% 20px;
+		width: 72.5%;
+	}
+	.sidebar {
+		float: left;
+		width: 25%;
+		margin-left: 0;
+		margin-right: 2.5%;
+	}
+}
+@media (max-width: 799px){
+	.sibebar {
+		border-top: 1px dotted #CCC;
+    	margin-top: 30px;
+	}
+	.sidebar li a {
+	    width: 100%;
+	    background-color: #FFF;
+	    display: inline-block;
+	    padding: 5px 5px 1px;
+	    box-sizing: border-box;
+	    border-radius: 4px;
+	}
+	.sidebar .demo-icon {
+		top: 5px;
+	}
+}
+
+/* Sidebar */
+
+.sidebar > li {
+	list-style: none;
+}
+.sidebar li {
+	color: #CDC5BA;
+	border-right: 3px solid transparent;
+	position: relative;
+}
+.sidebar li.answered,
+.sidebar li.answered a {
+	color: #333;
+	text-decoration: none;
+}
+.sidebar li.answered a:hover {
+	color: #54ACC9;
+}
+.sidebar ul.parent li {
+	margin: 8px 0;
+	list-style: disc;
+}
+.sidebar .parent > div {
+	padding: 10px 0;
+	margin-left: -40px;
+	color: #727272;
+	font-style: italic;
+}
+.sidebar ul:not(.parent) + li {
+	margin-top: 10px;
+}
+.sidebar ul:not(.parent) {
+	padding: 0;
+}
+.sidebar ul ul li {
+	list-style: disc;
+}
+.sidebar ul ul.active_parent li {
+	list-style: circle;
+	padding-bottom: 5px;
+	/*display: none*/
+}
+.sidebar ul li ul {
+	display: none;
+}
+.sidebar ul.active_parent,
+.parent > li.current + ul,
+.parent li.current ul.sub-menu {
+	display: block;
+	padding-left: 18px;
+}
+.parent li ul.sub-menu {
+	padding-left: 18px;
+}
+.parent li ul.sub-menu li {
+	list-style: circle;
+}
+.sidebar .demo-icon {
+	position: absolute;
+	left: -45px;
+	color: #54ACC9;
+}
+li.current .demo-icon {
+	color: #157C9E;
+}
+li.current,
+li.current > a {
+	color: #157C9E !important;
+}
+
+/* Main column */
+
+.main-column h1 { 
+	line-height: 1.2;
+}
+.main-column:not(.float) h1 {
+	font-family: 'Halant', serif;
+	font-size: 3em;
+	line-height: 1;
+}
+.main-column > p,
+.main-column > ul li {
+	font-family: 'Halant', serif;
+    line-height: 1.5;
+    letter-spacing: .01rem;
+	font-weight: 300;
+	font-style: normal;
+	font-size: 20px;
+}
+.main-column p {
+	line-height: 1.5;
+}
+.main-column p a:hover,
+.main-column li a:hover,
+.main-column p a:active,
+.main-column li a:active {
+	color: #54acc9;
+	text-decoration: underline;
+}
+.main-column p a,
+.main-column li a {
+	color: #157c9e;
+	text-decoration: none;
+}
+
+/* Questions */
+
+.code {
+	padding: 35px 18px 15px;
+	border-top: 1px dotted #B8B8B8;
+}
+.code h2 {
+	margin-top: 0;
+}
+.code ul {
+	padding-right: 15px;
+	padding-left: 20px;
+}
+.code ul h3,
+.print ul h3 {
+	margin-left: -20px;
+}
+.code p:last-of-type {
+	padding-bottom: 0;
+}
+.code.yourcode:last-of-type {
+	background-color: #FFF;
+    padding-top: 15px;
+    margin-top: 20px;
+    border-top: 0;
+}
+.code.yourcode:first-of-type {
+    border-bottom: 1px dotted #B8B8B8;
+}
+input[type='submit'] {
+	border: 0px;
+	cursor: pointer;
+	display: block;
+	font-family: 'Khula', sans-serif;
+	font-size: 1em;
+	font-weight: 100;
+	width: 100%;
+}
+.ethics-question label {
+	display: block;
+  	background: #F7F4F1;
+	padding: 15px;
+	border: 1px rgba(0, 0, 0, 0) solid;
+	line-height: 1.5;
+	margin-bottom: 5px;
+	cursor: pointer;
+	padding-left: 50px;
+	position: relative;
+}
+.ethics-question label span {
+	position: absolute;
+	left: 6px;
+	font-size: 1.7rem;
+	top: 10px;
+}
+.ethics-question label.selected span {
+	left: 8px;
+}
+.ethics-question label:hover {
+	background-color: #F8F8F8;
+}
+.ethics-question label.selected {
+	background: #EBF2EA;
+	box-shadow: none;
+	position: relative;
+	border: 1px solid #007F06;
+	color: #000;
+}
+.ethics-question label input {
+	position: absolute;
+	left: -50000px;
+}
+
+/* Resources */
+
+form.ethics-question {
+	overflow: auto;
+	position: relative;
+}
+form.ethics-question.skip {
+	padding-top: 5px;
+	border-top: 1px dotted #ccc;
+	border-bottom: 1px dotted #ccc;
+	margin-bottom: 20px;
+}
+a.btn,
+input.btn {
+	background: #EFE4AE;
+	color: #676767;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	display: block;
+	margin: 20px auto 0;
+	outline: 0;
+	padding: 10px 10px 3px;
+	text-align: center;
+	text-decoration: none;
+	border-bottom: 3px solid #DBD2A1;
+
+	font-size: 1.5em;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+.home a.btn {
+	max-width: 500px;
+}
+a.btn:hover {
+	background: #F2E49E;
+	border-bottom-color: #BEB687; 
+	color: #1D1D1D;
+}
+.btn:active {
+	position: relative;
+	top: 3px;
+	border-bottom: 3px solid #EFE4AE;
+}
+input.skip {
+	float: right;
+	text-align: right;
+	background: none;
+	padding: 0;
+	width: auto !important;
+}
+input.skip:hover {
+	color: #54ACC9;
+}
+
+/* Landing */
+
+#main-logo {
+	background: url(/wp-content/themes/ONA-ethics/img/ethics_logo_landing.png) no-repeat;
+    background-position: center center; 
+	background-size: 100% auto;
+	width: 547px;
+	height: 202px;
+	margin: 20px auto 0;
+	max-width: 100%;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+	#main-logo {
+		background: url(/wp-content/themes/ONA-ethics/img/ethics_logo_landing_1094.png) no-repeat;
+	    background-position: center center; 
+		background-size: 100% auto;
+	}
+}
+
+#eejf-logo {
+	background: url(/wp-content/themes/ONA-ethics/img/eejf_logo_50.png) no-repeat;
+    background-position: center center; 
+	background-size: 100% auto;
+	float: right;
+	width: 197px;
+	height: 50px;
+	max-width: 100%;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+	#eejf-logo {
+		background: url(/wp-content/themes/ONA-ethics/img/eejf_logo.png) no-repeat;
+	    background-position: center center; 
+		background-size: 100% auto;
+	}
+}
+@media (max-width:750px){
+	#eejf-logo {
+		float:none;
+	}
+}
+.home h2 {
+	text-align: center;
+    font-weight: 100;
+    margin-top: 50px;
+    color: #333;
+    font-size: 1.7rem;
+}
+
+/* Header */
+
+nav {
+	background: #eee9db;
+	overflow: auto;
+	padding: 10px 0;
+    position: relative;
+}
+nav a.logo {
+	display:block;
+	float: left;
+	margin-top:15px !important;
+	margin-left:20px;
+	width:150px;
+	height:29px;
+	background: url(/wp-content/themes/ONA-ethics/img/ethics_logo_150.png);
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+	nav a.logo {
+		background: url(/wp-content/themes/ONA-ethics/img/ethics_logo_300.png);
+		background-size: 150px 29px;
+	}
+}
+nav ul {
+	display: none;
+	overflow: visible;
+	float: right;
+}
+nav li {
+	float:left;
+	list-style:none;
+	margin-right:15px;
+}
+nav a.btn,
+nav a.btn:hover {
+	background: #54acc9;
+	border-bottom-color: #157c9e;
+	color:white;
+	font-size: 1em;
+	margin-top: 0;
+	padding: 5px 10px 0;
+}
+nav a:not(.btn) {
+	display: block;
+	margin-top: 5px;
+	margin-right: 18px;
+	margin-bottom: 22px;
+	text-decoration: none;
+	color: #157c9e;
+}
+nav a:not(.btn):hover {
+	color: #54acc9;
+}
+#menu-toggle {
+	cursor: pointer;
+	position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #54ACC9;
+    color: #FFF;
+    padding: 0 15px;
+    line-height: 88px;
+}
+@media (max-width: 799px){
+	nav ul.expanded {
+		display: block;
+	    background-color: #FFF;
+	    z-index: 500;
+	    position: relative;
+	    width: 100%;
+	    margin-bottom: -10px;
+	    padding-left: 0;
+	}
+	nav ul.expanded li {
+		width: 100%;
+	}
+	nav ul.expanded li a,
+	nav ul.expanded li a:hover {
+		border-radius: 0;
+	    border-bottom: 1px solid #D0D9DC;
+	    margin: 0;
+	    padding: 5px 10px 0px;
+	    text-align: center;
+	    font-weight: bold;
+	    max-width: none !important;
+	}
+}
+@media (min-width: 800px){
+	nav ul {
+		display: block;
+		margin-right:20px;
+	}
+	#menu-toggle {
+		display: none;
+	}
+	nav a:not(.btn) {
+		margin-bottom: 0;
+	}
+}
+
+
+footer {
+	clear: both;
+	display: inline-block;
+	border-top: 1px solid #E4E1D1;
+	margin-top: 50px;
+	padding-top: 20px;
+}
+footer p {
+	line-height: 1.8;
+	font-size: 0.8em;
+}
+footer .logo,
+.print.logo {
+	width:150px;
+	height:65px;
+	background: url(/wp-content/themes/ONA-ethics/img/ONA_logo.png);
+	background-size: 150px 65px;
+}
+
+/* Home */
+
+#topics {
+	margin-top: 50px;
+	overflow: visible;
+}
+.topic {
+	box-sizing: border-box;
+	margin-bottom: 45px;
+	padding: 0 15px;
+	text-align: center;
+}
+.topic:last-of-type {
+	margin-bottom: 0;
+}
+@media (min-width: 700px){
+	.topic {
+		float: left;
+		margin-bottom: 0;
+		width: 33.3%;
+	}
+}
+.topic a {
+	color: #444;
+	display: block;
+	text-decoration: none;
+}
+.topic-icon {
+	background: #54acc9;
+	border-radius: 50%;
+	margin: 0 auto 15px;
+	height: 70px;
+	width: 70px;
+}
+.topic:hover .topic-icon {
+	background: #157c9e;
+}
+.topic:hover .topic-title {
+	color: #157c9e;
+}
+.topic .demo-icon {
+	color: #FFF;
+	font-size: 2.4em;
+	padding-top: 10px;
+	display: block;
+}
+.topic-title {
+	font-size: 1.3em;
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+.topic-desc {
+	line-height: 1.4;
+	font-size: 1.1em;
+	color: #666;
+}
+#pages {
+	clear: both;
+	padding-top: 40px;
+}
+#pages h3 {
+	color: #444;
+	padding-top: 40px;
+	border-top: 1px dotted #CCC;
+	text-align: center;
+	font-size: 1.8rem;
+}
+#pages ul {
+	overflow: auto;
+	padding: 0;
+	text-align: center;
+}
+#pages li.page_item {
+	display: inline-block;
+	font-size: 1.5rem;
+	list-style: none;
+}
+#pages li.page_item:nth-of-type(2n) {
+	font-weight: bold;
+}
+#pages li.page_item a {
+	color: #54ACC9;
+	text-decoration: none;
+	padding: 0 5px;
+}
+#pages li.page_item a:hover {
+	color: #157C9E;
+}
+
+/* Dashboard */
+
+a.btn.dashboard {
+    font-weight: normal;
+    font-size: 1.2em;
+    text-transform: none;
+    margin-bottom: 30px;
+}
+.sections {
+	overflow: auto;
+}
+.section {
+	background: white;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	box-sizing: border-box;
+	margin-bottom: 15px;
+}
+.section a {
+	color: black;
+	text-decoration: none;
+}
+.section a:hover {
+	color: #54acc9;
+}
+.section:nth-of-type(3n){
+	margin-right: 0;
+}
+.section .segments {
+	background: #ddd;
+	overflow: auto;
+	margin: 0 10px 15px;
+}
+.skipped.segments {
+	background: yellow;
+}
+.section .segment {
+	border-right: 1px solid white;
+	box-sizing: border-box;
+	display: block;
+	float: left;
+	height: 8px;
+	background: green;
+}
+.section .segment:last-of-type {
+	border-right: 0;
+}
+.section h4 {
+	margin: 10px;
+	font-weight: 100;
+}
+
+a.segment:hover {
+	background: #54acc9;
+	cursor:pointer;
+}
+.sep {
+	border-bottom: 0;
+	border-top: 1px dashed #CCC;
+	margin: 30px 0;
+}
+
+.editable {
+	position: relative;
+	padding-right: 60px;
+}
+.editable:hover {
+	color: #54acc9;
+}
+#buttons {
+	display: none;
+	position: absolute;
+	top: -8px;
+	right: 0;
+	background: #EFE4AE;
+	color: #676767;
+	line-height: 1;
+  	padding: 6px 0px 0;
+	font-size: 2em;
+	border-radius: 5px;
+	border-bottom: 3px solid #DBD2A1;
+	cursor:pointer;
+}
+#buttons:active {
+	top: -5px;
+	border-bottom: 0;
+}
+form input + label {
+	display: block;
+	margin-top: 10px;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+	font-family: 'Khula', sans-serif;
+	width: 100%;
+	box-sizing: border-box;
+	font-size: 1em;
+	padding: 10px 10px 5px;
+	margin-top: 10px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #CCC;
+	font-weight: 100;
+}
+.form-response {
+	padding: 15px 15px 11px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	border: 2px solid;
+}
+.form-response.success {
+	color: #008000;
+}
+.form-response.error {
+	color: #C00;
+}
+input.match {
+	border-color: #008000;
+    background-color: #ECF7EC;
+}
+input.different {
+	border-color: #C00;
+	background-color: #F7ECEC;
+}
+textarea {
+	border: 1px solid #bbb;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-sizing: border-box;
+	width: 100%;
+}
+#register-message {
+	display: none;
+	text-align: center;
+	color: #a00;
+}
+
+/* Search */
+
+#searchform input[type="text"] {
+	margin-top: 0;
+	border-radius: 5px 5px 0px 0px;
+	-moz-border-radius: 5px 5px 0px 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	font-size: 1.6em;
+}
+#searchform input[type='submit'] {
+	background: #54ACC9;
+	border: 1px solid #54ACC9;
+	color: white;
+	display: inline-block;
+	font-size: 1.6em;
+	outline: 0;
+	padding: 10px 10px 5px;
+	width: 100%;
+	border-radius: 0px 0px 5px 5px;
+	-moz-border-radius: 0px 0px 5px 5px;
+	-webkit-border-radius: 0px 0px 5px 5px;
+}
+@media (min-width: 600px){
+	#searchform input[type="text"] {
+		width: 80%;
+		border-radius: 5px 0px 0px 5px;
+		-moz-border-radius: 5px 0px 0px 5px;
+		-webkit-border-radius: 5px 0px 0px 5px;
+	}
+	#searchform input[type='submit'] {
+		width: 20%;
+		border-radius: 0px 5px 5px 0px;
+		-moz-border-radius: 0px 5px 5px 0px;
+		-webkit-border-radius: 0px 5px 5px 0px;
+	}
+}
+#searchform input[type='submit']:hover {
+	background: #157C9E;
+}
+#searchform input[type="text"]:focus,
+#searchform input[type='submit']:active {
+	outline: 0;
+}
+#searchform + article {
+	margin-top: 40px;
+}
+article {
+	border-top: 1px dotted #CCC;
+	padding: 5px 0;
+}
+h3.entry-title {
+	font-family: 'Halant', serif;
+	font-weight: 100;
+	font-size: 1.5em;
+}
+h3.entry-title a {
+	color: #157C9E;
+	text-decoration: none;
+}
+h3.entry-title a:hover {
+	color: #54ACC9;
+}
+
+
+
+
+
+
+
