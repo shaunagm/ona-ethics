@@ -19,6 +19,8 @@ $categories = $wp->categories; ?>
 
 	<div class="code yourcode">
 
+		<h2>Journalism Fundamentals</h2>
+
 		<h2>Telling the truth</h2>
 		<ul>
 		<li>Be honest, accurate, truthful and fair. Do not distort or fabricate facts, imagery, sound or data.</li>
@@ -51,7 +53,7 @@ $categories = $wp->categories; ?>
 	</div>
 
 	<div class="code yourcode">
-		<?php 
+		<?php
 		foreach ($steps as $key => $val){
 
 			if ( $val['name'] == "Fundamentals") continue;
