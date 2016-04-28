@@ -90,11 +90,10 @@ html {
 	color: #54ACC9;
 }
 .sidebar ul.parent li {
-	margin: 8px 0;
 	list-style: disc;
 }
 .sidebar .parent > div {
-	padding: 10px 0;
+	padding: 5px 0;
 	margin-left: -40px;
 	color: #727272;
 	font-style: italic;
