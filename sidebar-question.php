@@ -14,6 +14,6 @@
 
 	<?php } else { ?>
 		<h4>Ethical Issues</h4>
-		<? echo $wp->q_sidebar; ?>
+		<?php echo $wp->q_sidebar; ?>
 	<?php } ?>
 </div>
