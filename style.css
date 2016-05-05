@@ -173,6 +173,7 @@ li.current > a {
 .main-column li a {
 	color: #157c9e;
 	text-decoration: none;
+	font-weight: bold;
 }
 
 /* Questions */
@@ -383,6 +384,7 @@ nav li {
 	float:left;
 	list-style:none;
 	margin-right:15px;
+	font-weight: bold;
 }
 nav a.btn,
 nav a.btn:hover {
