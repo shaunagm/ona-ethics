@@ -18,7 +18,7 @@ $categories = $wp->categories;
 	<h1><?php _e('Your Dashboard');?></h1>
 	<?php
 	$all_parents = -1; // Compensate for the Nature of your journalism child
-	$all_answered = -1;
+	$all_answered = 0;
 	/*echo '<pre>';
 	print_r($steps);
 	echo '</pre>';*/
