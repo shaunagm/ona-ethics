@@ -19,7 +19,7 @@ $categories = $wp->categories; ?>
 
 	<div class="code yourcode">
 
-		<h2>Journalism Fundamentals</h2>
+		<h1>Journalism Fundamentals</h1>
 
 		<h2>Telling the truth</h2>
 		<ul>
