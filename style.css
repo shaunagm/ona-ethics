@@ -4,7 +4,7 @@
 	Version: 0.1
 	Description: A custom theme built for the ONA Ethics Code customizer
 	Author: Adam Nekola
-	
+
 ----------------------------------------------------------------------------------- */
 
 body {
@@ -134,15 +134,24 @@ html {
 }
 li.current .demo-icon {
 	color: #157C9E;
+	font-weight: bold;
 }
 li.current,
 li.current > a {
 	color: #157C9E !important;
+	font-weight: bold;
+	font-size: 110%;
 }
+
+li.current ul {
+	font-weight: normal;
+	font-size: 91%;
+}
+
 
 /* Main column */
 
-.main-column h1 { 
+.main-column h1 {
 	line-height: 1.2;
 }
 .main-column:not(.float) h1 {
@@ -285,7 +294,7 @@ input.btn {
 }
 a.btn:hover {
 	background: #F2E49E;
-	border-bottom-color: #BEB687; 
+	border-bottom-color: #BEB687;
 	color: #1D1D1D;
 }
 .btn:active {
@@ -308,34 +317,34 @@ input.skip:hover {
 
 #main-logo {
 	background: url(/wp-content/themes/ONA-ethics/img/ethics_logo_landing.png) no-repeat;
-    background-position: center center; 
+    background-position: center center;
 	background-size: 100% auto;
 	width: 547px;
 	height: 202px;
 	margin: 20px auto 0;
 	max-width: 100%;
 }
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
 	#main-logo {
 		background: url(/wp-content/themes/ONA-ethics/img/ethics_logo_landing_1094.png) no-repeat;
-	    background-position: center center; 
+	    background-position: center center;
 		background-size: 100% auto;
 	}
 }
 
 #eejf-logo {
 	background: url(/wp-content/themes/ONA-ethics/img/eejf_logo_50.png) no-repeat;
-    background-position: center center; 
+    background-position: center center;
 	background-size: 100% auto;
 	float: right;
 	width: 197px;
 	height: 50px;
 	max-width: 100%;
 }
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
 	#eejf-logo {
 		background: url(/wp-content/themes/ONA-ethics/img/eejf_logo.png) no-repeat;
-	    background-position: center center; 
+	    background-position: center center;
 		background-size: 100% auto;
 	}
 }
@@ -369,7 +378,7 @@ nav a.logo {
 	height:29px;
 	background: url(/wp-content/themes/ONA-ethics/img/ethics_logo_150.png);
 }
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
 	nav a.logo {
 		background: url(/wp-content/themes/ONA-ethics/img/ethics_logo_300.png);
 		background-size: 150px 29px;
@@ -769,10 +778,3 @@ h3.entry-title a {
 h3.entry-title a:hover {
 	color: #54ACC9;
 }
-
-
-
-
-
-
-
