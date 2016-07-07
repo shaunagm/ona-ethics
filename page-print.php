@@ -24,7 +24,7 @@ if ( !is_user_logged_in() ){
 		<meta property="og:description" content="ONA15 is the premier gathering of highly engaged digital journalists who are shaping the future of media.">
 
 
-		<title><?php wp_title('|', true, 'right'); ?></title>
+		<title><?php wp_title('Your Code', true, 'right'); ?></title>
 
 		<?php wp_head();
 			$steps = $wp->steps;
