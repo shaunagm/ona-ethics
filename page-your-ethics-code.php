@@ -60,9 +60,8 @@ $categories = $wp->categories; ?>
 
 			$question_data = get_user_meta( get_current_user_id(), 'question'.$key, true);
 
-			if ( $val['level'] == 1 && ($categories[$val['parent']]['title']
-				// Or if this is the nature of your journalism
-				|| $val['name']=='Ethical Choices' ) ){
+			if ( ($val['name'] == "Nature of Your Journalism") ||
+				 ( $val['level'] == 1 && $categories[$val['parent']]['title'])) {
 
 				// If both of the next questions are empty or skipped
 				$next = getNextEthic($key);
@@ -83,7 +82,7 @@ $categories = $wp->categories; ?>
 				} else {
 					$notfirst = true;
 				}
-				echo '<h2>'.($val['name']=='Ethical Choices' ? 'Nature of Your Journalism' : $val['name']).'</h2>';
+				echo '<h2>'.$val['name'].'</h2>';
 				echo '<ul>';
 			}
 
