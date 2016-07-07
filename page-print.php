@@ -65,9 +65,8 @@ if ( !is_user_logged_in() ){
 
 			$question_data = get_user_meta( get_current_user_id(), 'question'.$key, true);
 
-			if ( $val['level'] == 1 && ($categories[$val['parent']]['title']
-				// Or if this is the nature of your journalism
-				|| $val['name']=='Ethical Choices' ) ){
+			if ( ($val['name'] == "Nature of Your Journalism") ||
+				 ( $val['level'] == 1 && $categories[$val['parent']]['title'])) {
 
 				$next = getNextEthic($key);
 				$next_data = get_user_meta( get_current_user_id(), 'question'.$next, true);
